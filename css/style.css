@@ -549,6 +549,8 @@ body {
   background: url("../images/btn_05.png") no-repeat center;
 }
 .page-footer {
+  position: relative;
+  z-index: 10;
   margin: -170px auto;
   padding-top: 230px;
   width: 1200px;
