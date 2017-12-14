@@ -93,13 +93,6 @@ body {
   height: 270px;
   background: url("../images/animal_01.png") no-repeat center;
 }
-.animal_01:hover {
-
-  animation:jump 0.5s ease 0s infinite alternate forwards;
-  -moz-animation:jump 0.5s ease 0s infinite alternate forwards; /* Firefox */
-  -webkit-animation:jump 0.5s ease 0s infinite alternate forwards; /* Safari and Chrome */
-  -o-animation:jump 0.5s ease 0s infinite alternate forwards; /* Opera */
-}
 .animal_02 {
   position: absolute;
   top: 200px;
