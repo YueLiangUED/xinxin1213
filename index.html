@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- 页面编码 -->
+        <meta charset="UTF-8">
+        <!-- 页面渲染方式-->
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- 页面适配说明-->
+        <meta name="applicable-device" content="pc">
+        <!-- 页面自适应标签-->
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+        <!-- seo：增加关键词-->
+        <meta name="keywords" content="">
+        <!-- seo：增加描述-->
+        <meta name="description" content="">
+        <!-- 页面样式-->
+        <link rel="stylesheet" type="text/css" href="css/reset-pc.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <!-- 页面操作脚本-->
+        <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+        <script type="text/javascript">
+
+            function loaded () {
+                $('.rule-title').on('click', function () {
+                    if ($(this).hasClass('act')) {
+                        $('.rule-text').slideUp('fast');
+                        $(this).removeClass('act')
+                    } else {
+                        $('.rule-text').slideDown('fast');
+                        $(this).addClass('act')
+                    }
+                    
+                });
+                var friendList = $('.friend-list-box').height();
+                var friendListH = $('.friend-list').height();
+                $('.friend-list-box').animate({
+                    top: friendListH-friendList
+                },{
+                    duration: 10000,
+                    easing: 'linear',
+                    complete: function(){
+                        $('.friend-list-box').css({
+                            'top': 0
+                        });
+                    }
+                });
+                setInterval(function () {
+                    $('.friend-list-box').animate({
+                    top: friendListH-friendList
+                    },{
+                    duration: 10000,
+                    easing: 'linear',
+                    complete: function(){
+                        $('.friend-list-box').css({
+                            'top': 0
+                        });
+                    }
+                    });
+                }, 10000)
+                
+
+            }
+            var loadImg = function(pics, callback){
+                var index = 0;
+                var len = pics.length;
+                var img = new Image();
+                var flag = false;
+                var load = function(){
+                    img.src = pics[index];
+                    img.onload = function() {
+                        index ++ ;
+                        if (index < len) {
+                            load();
+                        }else{
+                            callback();
+                        }
+                    }
+                    return img;
+                }
+                if(len > 0){
+                    load();
+                }
+            }
+            var pics = [
+                'images/banner_01.png',
+                'images/animal_01.png',
+                'images/animal_02.png',
+                'images/banner_text.png'
+            ];
+            loadImg(pics,function () {
+                $('.banner_text').addClass('zoomIn');
+            });
+        </script>
+        <title>移起迎新年</title>
+    </head>
+    <body onload="loaded()">
+        <div class="banner">
+            <img src="images/banner_01.png" alt="" />
+            <div class="banner_text"></div>
+            <div class="animal_01"></div>
+            <div class="animal_02"></div>
+        </div>
+        <div class="wrapper">
+            <div class="floor_01 clearfix">
+                <div class="panel">
+                    <div class="panel-content">
+                        <div class="timer">
+                            10:00
+                        </div>
+                        <div class="name">
+                            30M<span>宽带</span>
+                        </div>
+                        <div class="price">
+                            低至<span>70</span>元
+                        </div>
+                        <div class="surplus">
+                            剩余120份
+                        </div>
+                        <div class="limit">
+                            （限量500份）
+                        </div>
+                        <div class="tag">
+                            1年
+                        </div>
+                    </div>
+                    <a class="btn" href=""></a>
+                </div>
+                <div class="panel">
+                    <div class="panel-content">
+                        <div class="timer">
+                            14:00
+                        </div>
+                        <div class="name">
+                            50M<span>宽带</span>
+                        </div>
+                        <div class="price">
+                            低至<span>108</span>元
+                        </div>
+                        <div class="surplus">
+                            剩余23份
+                        </div>
+                        <div class="limit">
+                            （限量500份）
+                        </div>
+                        <div class="tag">
+                            1年
+                        </div>
+                    </div>
+                    <a class="btn btn_02 zoomloop" href=""></a>
+                </div>
+                <div class="panel">
+                    <div class="panel-content">
+                        <div class="timer">
+                            20:00
+                        </div>
+                        <div class="name">
+                            100M<span>宽带</span>
+                        </div>
+                        <div class="price">
+                            低至<span>128</span>元
+                        </div>
+                        <div class="surplus">
+                            剩余500份
+                        </div>
+                        <div class="limit">
+                            （限量500份）
+                        </div>
+                        <div class="tag">
+                            1年
+                        </div>
+                    </div>
+                    <a class="btn btn_03" href=""></a>
+                </div>
+            </div>
+            <div class="floor_02">
+                <div class="progress-contaier">
+                    <div class="progress-item-box clearfix">
+                        <div class="progress-item">
+                            <div class="progress-item-content">
+                                <p>200M</p>
+                                <p style="font-size: 10px;color: #fcd63d;font-weight: 400;line-height: 1;">本地流量</p>
+                            </div>
+                            <div class="progress-item-icon"></div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-item-content">
+                                <p>咪咕</p>
+                                <p style="font-size: 10px;color: #fcd63d;font-weight: 400;line-height: 1;">读书券</p>
+                            </div>
+                            <div class="progress-item-icon"></div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-item-content">
+                                <p>60GB</p>
+                                <p style="font-size: 10px;color: #fcd63d;font-weight: 400;line-height: 1;">视频流量</p>
+                            </div>
+                            <div class="progress-item-icon"></div>
+                        </div>
+                        <div class="progress-item" style="margin-right: 0;">
+                            <div class="progress-item-content">
+                                <p>300元</p>
+                                <p style="font-size: 10px;color: #fcd63d;font-weight: 400;line-height: 1;">代金券</p>
+                            </div>
+                            <div class="progress-item-icon"></div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <span></span>
+                    </div>
+                    <div class="price-box clearfix">
+                        <div class="price-item">
+                            <i></i>
+                            <p>1680元</p>
+                        </div>
+                        <div class="price-item">
+                            <i></i>
+                            <p>1360元</p>
+                        </div>
+                        <div class="price-item">
+                            <i></i>
+                            <p>1310元</p>
+                        </div>
+                        <div class="price-item" style="margin-right: 0px;">
+                            <i></i>
+                            <p>700元</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="invite-surplus">还可邀请12位好友拆福包</div>
+                <div class="btn-box clearfix">
+                    <a class="btn fl zoomloop" href="">立即办理</a>
+                    <a class="btn fr zoomloop" href="">邀请好友拆福包</a>
+                </div>
+                <div id="friendList" class="friend-list">
+                    <div class="friend-list-box" style="position: absolute;">
+                        <p><i></i>xxxxxx帮我拆了100元，获得1年语音信箱免费体验，大吉大利，年年有余～</p>
+                        <p><i></i>xxxxxx帮我拆了100元，获得1年语音信箱免费体验，大吉大利，年年有余～</p>
+                        <p><i></i>xxxxxx帮我拆了100元，获得1年语音信箱免费体验，大吉大利，年年有余～</p>
+                        <p><i></i>xxxxxx帮我拆了100元，获得1年语音信箱免费体验，大吉大利，年年有余～</p>
+                        <p><i></i>xxxxxx帮我拆了100元，获得1年语音信箱免费体验，大吉大利，年年有余～</p>
+                        <p><i></i>xxxxxx帮我拆了100元，获得1年语音信箱免费体验，大吉大利，年年有余～</p>
+                        <p><i></i>xxxxxx帮我拆了100元，获得1年语音信箱免费体验，大吉大利，年年有余～</p>
+                        <p><i></i>xxxxxx帮我拆了100元，获得1年语音信箱免费体验，大吉大利，年年有余～</p>
+                        <p><i></i>xxxxxx帮我拆了100元，获得1年语音信箱免费体验，大吉大利，年年有余～</p>
+                        <p><i></i>xxxxxx帮我拆了100元，获得1年语音信箱免费体验，大吉大利，年年有余～</p>
+                        <p><i></i>xxxxxx帮我拆了100元，获得1年语音信箱免费体验，大吉大利，年年有余～</p>
+                        <p><i></i>xxxxxx帮我拆了100元，获得1年语音信箱免费体验，大吉大利，年年有余～</p>
+                    </div>
+                </div>
+                <div class="migu clearfix">
+                    <div class="migu-card"></div>
+                    <div class="migu-right fr">
+                        <p class="migu-text">观看咪咕直播随机掉落咪咕助力卡可获得额外邀请机会</p>
+                        <p class="migu-num">我有0张助力卡</p>
+                    </div>
+                </div>
+            </div>
+            <div class="floor_03">
+                <a href="" style="display: block;width: 507px;margin: 0 auto;">
+                    <img src="images/panel_02.png" alt="" />
+                    <div class="btn_05 zoomloop"></div>
+                </a>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="rule-content">
+                <div class="rule-title"><span>活动规则<i></i></span></div>
+                <div class="rule-text" style="display: none;">
+                    <p>1、活动时间：2018年2月8日至2018年2月22日，本活动仅限北京移动用户参与。</p>
+                    <p>2、活动期间每天10:00、14:00、20:00起开始秒杀，按日进行限量，抢完为止。若当日有剩余量则到当天23:59归零，次日重新开始计数。该优惠为移动宽带新装用户专享，经工作人员核实后，若用户抢购号码已绑定移动宽带账号则无法享受折扣优惠资格。</p>
+                    <p>3、活动期间每天10:00提供30M、14:00提供50M、20:00提供100M各100笔只办宽带(单宽带)一年期1折优惠资格，该抢购仅是秒杀资格抢购，最终能否享受该优惠以实际安装结果为准，实际地址未覆盖或其他原因无法安装则该折扣优惠自动取消。用户在电子渠道提交预报装订单成功，记为获得优惠资格。该资格仅限本人使用，不可转赠。</p>
+                    <p>4、以用户报装手机号为准，每个号码活动期间仅能参与一次秒杀抢购。手机号码在分户、合户、转户、销户、停机、保留期等特殊时期时，无法享受宽带优惠，后台核实后将取消优惠资格。
+                    5、北京移动号码报装默认开通手机号绑定宽带账号，绑定后在宽带使用期内手机号码不可以办理销户、转户、分户、合户、无法办理携号转品牌业务。手机号码欠费停机，则家庭宽带业务次月停机；手机账户恢复时，宽带业务同时恢复。</p>
+                    <p>6、单位户（即客户姓名为***公司）线上无法办理，故经工作人员核实后单位户号码无法参与折扣秒杀活动。</p>
+                    <p>7、折扣秒杀产品与同期的其它话费赠送活动不可叠加，且无和目摄影头赠送，介意者请谨慎下单。</p>
+                    <p>8、邀请好友帮忙拆福包，每名好友限拆1次，最高限15名好友。参与咪咕直播APP观看内容可随机获得咪咕福包。使用咪咕福包可获得更多额外减价机会。每名用户最多可使用5张咪咕助力卡。</p>
+                    <p>9、好友拆福包每次随机减少金额，最高可减20元，最高可帮5名好友拆福包，好友帮拆福包后，该好友可随机获得北京移动新年礼包一份，超过帮拆次数将不能获得礼包奖励。获得礼包的用户可直接兑换或使用。礼包奖励以实际发放为准。</p>
+                    <p>10、用户可在拆福包过程中随时开通宽带，未达到下一档位时，需要以前一档位价格开通。拆福包开通宽带后可获得对应档位的礼包奖励，获得的礼包可直接兑换或使用。</p>
+                    <p>12、每个账号仅能发起一次拆福包活动，开通1次后将不能发起拆福包活动，拆福包各档位宽带套餐限开1次。</p>
+                    <p>13、本活动最终解释权归北京移动所有，如有疑问可致电10086资讯。</p>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+</html>
