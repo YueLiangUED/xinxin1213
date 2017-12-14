@@ -93,6 +93,13 @@ body {
   height: 270px;
   background: url("../images/animal_01.png") no-repeat center;
 }
+.animal_01:hover {
+
+  animation:jump 0.5s ease 0s infinite alternate forwards;
+  -moz-animation:jump 0.5s ease 0s infinite alternate forwards; /* Firefox */
+  -webkit-animation:jump 0.5s ease 0s infinite alternate forwards; /* Safari and Chrome */
+  -o-animation:jump 0.5s ease 0s infinite alternate forwards; /* Opera */
+}
 .animal_02 {
   position: absolute;
   top: 200px;
@@ -105,58 +112,58 @@ body {
   -webkit-animation:shak_reverse 0.8s ease 0s infinite alternate forwards; /* Safari and Chrome */
   -o-animation:shak_reverse 0.8s ease 0s infinite alternate forwards; /* Opera */
 }
-@keyframes shak
+@keyframes jump
 {
   0%   {
-    -ms-transform:rotate(0); /* IE 9 */
+    -ms-transform:translateY(0); /* IE 9 */
     -webkit-transform: rotate(0); /* Safari */
     transform: rotate(0); /* 标准语法 */
   }
   100% {
-    -ms-transform:rotate(15deg); /* IE 9 */
-    -webkit-transform: rotate(15deg); /* Safari */
-    transform: rotate(15deg); /* 标准语法 */
+    -ms-transform:translateY(-80px); /* IE 9 */
+    -webkit-transform:translateY(-80px); /* Safari */
+    transform: translateY(-80px); /* 标准语法 */
   }
 }
-@-moz-keyframes shak /* Firefox */
+@-moz-keyframes jump /* Firefox */
 {
   0%   {
-    -ms-transform:rotate(0); /* IE 9 */
+    -ms-transform:translateY(0); /* IE 9 */
     -webkit-transform: rotate(0); /* Safari */
     transform: rotate(0); /* 标准语法 */
   }
   100% {
-    -ms-transform:rotate(15deg); /* IE 9 */
-    -webkit-transform: rotate(15deg); /* Safari */
-    transform: rotate(15deg); /* 标准语法 */
-  }
-}
-
-@-webkit-keyframes shak /* Safari and Chrome */
-{
-  0%   {
-    -ms-transform:rotate(0); /* IE 9 */
-    -webkit-transform: rotate(0); /* Safari */
-    transform: rotate(0); /* 标准语法 */
-  }
-  100% {
-    -ms-transform:rotate(15deg); /* IE 9 */
-    -webkit-transform: rotate(15deg); /* Safari */
-    transform: rotate(15deg); /* 标准语法 */
+    -ms-transform:translateY(-80px); /* IE 9 */
+    -webkit-transform:translateY(-80px); /* Safari */
+    transform: translateY(-80px); /* 标准语法 */
   }
 }
 
-@-o-keyframes shak /* Opera */
+@-webkit-keyframes jump /* Safari and Chrome */
 {
   0%   {
-    -ms-transform:rotate(0); /* IE 9 */
+    -ms-transform:translateY(0); /* IE 9 */
     -webkit-transform: rotate(0); /* Safari */
     transform: rotate(0); /* 标准语法 */
   }
   100% {
-    -ms-transform:rotate(15deg); /* IE 9 */
-    -webkit-transform: rotate(15deg); /* Safari */
-    transform: rotate(15deg); /* 标准语法 */
+    -ms-transform:translateY(-80px); /* IE 9 */
+    -webkit-transform:translateY(-80px); /* Safari */
+    transform: translateY(-80px); /* 标准语法 */
+  }
+}
+
+@-o-keyframes jump /* Opera */
+{
+  0%   {
+    -ms-transform:translateY(0); /* IE 9 */
+    -webkit-transform: rotate(0); /* Safari */
+    transform: rotate(0); /* 标准语法 */
+  }
+  100% {
+    -ms-transform:translateY(-80px); /* IE 9 */
+    -webkit-transform:translateY(-80px); /* Safari */
+    transform: translateY(-80px); /* 标准语法 */
   }
 }
 @keyframes shak_reverse
@@ -292,7 +299,7 @@ body {
   height: 345px;
   padding-top: 25px;
   margin-top: 210px;
-  margin-left: 275px;
+  margin-left: 297px;
   text-align: center;
 }
 .floor_01 .panel {
@@ -390,7 +397,7 @@ body {
   height: 512px;
   padding-top: 44px;
   margin-top: 236px;
-  margin-left: 275px;
+  margin-left: 297px;
 }
 .floor_02 .progress-item-box {
   width: 552px;
@@ -524,7 +531,7 @@ body {
   width: 611px;
   height: 453px;
   padding-top: 30px;
-  margin-left: 275px;
+  margin-left: 297px;
 }
 .floor_03 a {
   position: relative;
@@ -543,9 +550,7 @@ body {
 }
 .page-footer {
   position: relative;
-  top: -170px;
-  left: 50%;
-  margin-left: -620px;
+  margin: -170px auto;
   padding-top: 230px;
   z-index: 5;
   width: 1200px;
