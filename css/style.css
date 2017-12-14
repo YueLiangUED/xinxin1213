@@ -292,7 +292,7 @@ body {
   margin: 0 auto;
   margin-top: -12px;
   overflow: hidden;
-  background: url("../images/floor.png") no-repeat center top;
+  background: url("../images/floor_01.png") no-repeat center top;
 }
 .floor_01 {
   width: 611px;
